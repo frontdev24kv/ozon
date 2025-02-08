@@ -1,9 +1,17 @@
+import getData from "./getData";
+import postData from "./postData";
+import deleteData from "./deleteData";
 const second = () => {
   const cartOpenBtn = document.getElementById("cart");
-  const cart = document.querySelector(".cart");
-  const cartCloseBtn = cart.querySelector(".cart-close");
 
-  console.log("hello webpack");
+  cartOpenBtn.addEventListener("click", () => {
+    postData().then(data=>{
+      console.log(data)
+    
+      getData().then(data=>console.log(data))
+      console.log("ok");
+      
+    })
+  })
 };
-
 export default second;
